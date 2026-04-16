@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedmed - Manutenção e Calibração de Equipamentos Médicos</title>
+    <meta name="description" content="Especialistas em manutenção e calibração de equipamentos médicos com mais de 5 anos de experiência. Precisão, agilidade e conformidade para a sua clínica ou hospital.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        pedblue: {
+                            DEFAULT: '#146098', // Azul do logo
+                            dark: '#0f4873',
+                            light: '#e8f2f9'
+                        },
+                        pedgreen: {
+                            DEFAULT: '#2a9d5c', // Verde do logo
+                            dark: '#1e7544',
+                            light: '#ebf7f0'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom styles for minor tweaks */
+        .gradient-bg {
+            background: linear-gradient(135deg, #146098 0%, #0f4873 100%);
+        }
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #146098, #2a9d5c);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased bg-gray-50">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md fixed w-full z-50 top-0 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo Approximation -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="flex items-center">
+                        <i class="fa-solid fa-stethoscope text-pedblue text-2xl mr-1"></i>
+                        <span class="font-bold text-3xl tracking-tight text-pedblue">ped<span class="text-pedgreen">med</span></span>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#sobre" class="text-gray-600 hover:text-pedblue font-medium transition-colors">Sobre Nós</a>
+                    <a href="#servicos" class="text-gray-600 hover:text-pedblue font-medium transition-colors">Serviços</a>
+                    <a href="#diferenciais" class="text-gray-600 hover:text-pedblue font-medium transition-colors">Diferenciais</a>
+                    <a href="#contato" class="bg-pedgreen hover:bg-pedgreen-dark text-white px-6 py-2.5 rounded-full font-semibold transition-colors shadow-lg shadow-pedgreen/30">
+                        Fale Conosco
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-pedblue focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#sobre" class="block px-3 py-3 text-gray-700 font-medium hover:bg-pedblue-light hover:text-pedblue rounded-md">Sobre Nós</a>
+                <a href="#servicos" class="block px-3 py-3 text-gray-700 font-medium hover:bg-pedblue-light hover:text-pedblue rounded-md">Serviços</a>
+                <a href="#diferenciais" class="block px-3 py-3 text-gray-700 font-medium hover:bg-pedblue-light hover:text-pedblue rounded-md">Diferenciais</a>
+                <a href="#contato" class="block px-3 py-3 text-center bg-pedblue text-white font-bold rounded-md mt-4">Fale Conosco</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden relative">
+        <!-- Abstract Background Shapes -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-pedblue-light opacity-50 blur-3xl z-0"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-pedgreen-light opacity-50 blur-3xl z-0"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                
+                <!-- Text Content -->
+                <div class="w-full lg:w-1/2 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pedblue-light text-pedblue font-semibold text-sm mb-6 border border-pedblue/20">
+                        <i class="fa-solid fa-certificate"></i> Mais de 5 anos de Excelência
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+                        Precisão que <span class="text-gradient">Salva Vidas</span>
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Especialistas em Manutenção e Calibração de Equipamentos Médicos. Garantimos o funcionamento perfeito e a precisão absoluta para que sua equipe foque no que mais importa: o paciente.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#contato" class="bg-pedblue hover:bg-pedblue-dark text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg shadow-pedblue/30 flex items-center justify-center gap-2">
+                            Solicitar Orçamento <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#servicos" class="bg-white text-pedblue border-2 border-pedblue/20 hover:border-pedblue hover:bg-pedblue-light px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center">
+                            Conhecer Serviços
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Image/Graphic -->
+                <div class="w-full lg:w-1/2 relative">
+                    <div class="bg-white p-8 rounded-3xl shadow-2xl relative z-10 border border-gray-100">
+                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Equipamento Médico" class="rounded-2xl w-full h-auto object-cover mb-6">
+                        
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-4 border border-gray-100 animate-bounce" style="animation-duration: 3s;">
+                            <div class="w-12 h-12 bg-pedgreen-light rounded-full flex items-center justify-center text-pedgreen text-xl">
+                                <i class="fa-solid fa-check-double"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 font-medium">Calibração</p>
+                                <p class="font-bold text-gray-800">100% Rastreável</p>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge 2 -->
+                        <div class="absolute -top-6 -right-6 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-4 border border-gray-100">
+                            <div class="w-12 h-12 bg-pedblue-light rounded-full flex items-center justify-center text-pedblue text-xl">
+                                <i class="fa-solid fa-stopwatch"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 font-medium">Atendimento</p>
+                                <p class="font-bold text-gray-800">Rápido e Seguro</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nós Section -->
+    <section id="sobre" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col-reverse lg:flex-row items-center gap-16">
+                <!-- Image -->
+                <div class="w-full lg:w-1/2">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Técnico trabalhando" class="rounded-2xl h-64 w-full object-cover shadow-md mt-8">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Laboratório" class="rounded-2xl h-64 w-full object-cover shadow-md">
+                    </div>
+                </div>
+                
+                <!-- Content -->
+                <div class="w-full lg:w-1/2 text-center lg:text-left">
+                    <h4 class="text-pedgreen font-bold uppercase tracking-wider mb-2">A Pedmed</h4>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Mais de 5 Anos de Experiência e Dedicação</h2>
+                    <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                        Nascemos com a missão de garantir que profissionais de saúde tenham a máxima segurança e confiabilidade em suas ferramentas de trabalho. 
+                    </p>
+                    <p class="text-gray-600 mb-8 text-lg leading-relaxed">
+                        Com **mais de meia década atuando firmemente em duas frentes vitais — Manutenção e Calibração** —, construímos nossa reputação baseada no rigor técnico, transparência e respeito às normas de segurança.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                            <h3 class="font-bold text-2xl text-pedblue mb-1">+500</h3>
+                            <p class="text-gray-600 text-sm">Equipamentos Calibrados</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                            <h3 class="font-bold text-2xl text-pedgreen mb-1">100%</h3>
+                            <p class="text-gray-600 text-sm">Conformidade Normativa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços Section -->
+    <section id="servicos" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h4 class="text-pedblue font-bold uppercase tracking-wider mb-2">O que fazemos</h4>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nossas Frentes de Atuação</h2>
+                <p class="text-gray-600 text-lg">Soluções completas para prolongar a vida útil e garantir a exatidão dos seus equipamentos médicos.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                
+                <!-- Service 1: Manutenção -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border-t-4 border-pedblue group">
+                    <div class="w-16 h-16 bg-pedblue-light rounded-2xl flex items-center justify-center text-pedblue text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Manutenção de Equipamentos</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Atuamos com rapidez para minimizar o tempo de inatividade. Oferecemos soluções completas para diversas marcas e modelos do mercado.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-pedgreen mt-1"></i>
+                            <span class="text-gray-700"><strong>Manutenção Preventiva:</strong> Limpeza, lubrificação, ajustes e substituição de peças desgastadas antes que falhem.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-pedgreen mt-1"></i>
+                            <span class="text-gray-700"><strong>Manutenção Corretiva:</strong> Diagnóstico preciso e reparo ágil em caso de quebras ou falhas inesperadas.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service 2: Calibração -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border-t-4 border-pedgreen group">
+                    <div class="w-16 h-16 bg-pedgreen-light rounded-2xl flex items-center justify-center text-pedgreen text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-weight-scale"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Calibração e Certificação</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        A exatidão é inegociável na medicina. Realizamos testes rigorosos para assegurar que seus equipamentos apresentem resultados confiáveis.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-pedblue mt-1"></i>
+                            <span class="text-gray-700"><strong>Padrões Rastreáveis:</strong> Utilização de analisadores certificados e rastreáveis pela RBC/INMETRO.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-pedblue mt-1"></i>
+                            <span class="text-gray-700"><strong>Emissão de Certificados:</strong> Documentação completa válida para auditorias e certificações hospitalares (ONA, etc).</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section id="diferenciais" class="py-20 bg-pedblue text-white relative overflow-hidden">
+        <!-- Pattern background -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 20px 20px;"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Por que escolher a Pedmed?</h2>
+                <p class="text-blue-100 text-lg max-w-2xl mx-auto">Nossos pilares garantem a tranquilidade técnica da sua instituição.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Diferencial 1 -->
+                <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-8 rounded-2xl text-center hover:bg-white/20 transition-colors">
+                    <div class="w-16 h-16 mx-auto bg-pedgreen rounded-full flex items-center justify-center text-white text-2xl mb-6">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Corpo Técnico Especializado</h3>
+                    <p class="text-blue-100">Nossa equipe é formada por engenheiros e técnicos altamente capacitados com mais de 5 anos de atuação na área médica.</p>
+                </div>
+                <!-- Diferencial 2 -->
+                <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-8 rounded-2xl text-center hover:bg-white/20 transition-colors">
+                    <div class="w-16 h-16 mx-auto bg-pedgreen rounded-full flex items-center justify-center text-white text-2xl mb-6">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Agilidade no Atendimento</h3>
+                    <p class="text-blue-100">Sabemos que um equipamento parado custa vidas e recursos. Priorizamos a agilidade sem perder a qualidade no reparo.</p>
+                </div>
+                <!-- Diferencial 3 -->
+                <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-8 rounded-2xl text-center hover:bg-white/20 transition-colors">
+                    <div class="w-16 h-16 mx-auto bg-pedgreen rounded-full flex items-center justify-center text-white text-2xl mb-6">
+                        <i class="fa-solid fa-file-contract"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Segurança Regulatória</h3>
+                    <p class="text-blue-100">Garantimos que todos os seus equipamentos estejam em conformidade com as normas vigentes, passando em qualquer auditoria.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row border border-gray-100">
+                
+                <!-- Contact Info -->
+                <div class="bg-pedblue p-10 lg:w-2/5 text-white flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-pedblue-dark rounded-full opacity-50 z-0"></div>
+                    <div class="absolute top-10 -left-10 w-32 h-32 bg-pedblue-dark rounded-full opacity-50 z-0"></div>
+                    
+                    <div class="relative z-10">
+                        <h3 class="text-3xl font-bold mb-2">Fale Conosco</h3>
+                        <p class="text-blue-100 mb-10">Agende uma visita técnica ou solicite um orçamento sem compromisso.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-pedgreen text-xl">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-blue-200">Telefone / WhatsApp</p>
+                                    <p class="font-bold text-lg">(11) 99999-9999</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-pedgreen text-xl">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-blue-200">E-mail</p>
+                                    <p class="font-bold text-lg">contato@pedmed.com.br</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-pedgreen text-xl">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-blue-200">Endereço</p>
+                                    <p class="font-bold">Av. Paulista, 1000 - São Paulo, SP</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative z-10 mt-12">
+                        <p class="text-sm text-blue-200 mb-4">Siga nossas redes sociais:</p>
+                        <div class="flex gap-4">
+                            <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-pedgreen transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-pedgreen transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-pedgreen transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="p-10 lg:w-3/5 bg-gray-50">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Envie sua mensagem</h3>
+                    <form class="space-y-6" onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso! Em breve entraremos em contato.');">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="nome" class="block text-sm font-medium text-gray-700 mb-2">Nome / Empresa</label>
+                                <input type="text" id="nome" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-pedblue focus:border-pedblue outline-none transition-all" placeholder="Seu nome completo" required>
+                            </div>
+                            <div>
+                                <label for="telefone" class="block text-sm font-medium text-gray-700 mb-2">Telefone</label>
+                                <input type="tel" id="telefone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-pedblue focus:border-pedblue outline-none transition-all" placeholder="(00) 00000-0000" required>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">E-mail</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-pedblue focus:border-pedblue outline-none transition-all" placeholder="seu@email.com" required>
+                        </div>
+                        
+                        <div>
+                            <label for="servico" class="block text-sm font-medium text-gray-700 mb-2">Qual serviço você necessita?</label>
+                            <select id="servico" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-pedblue focus:border-pedblue outline-none transition-all bg-white" required>
+                                <option value="" disabled selected>Selecione uma opção...</option>
+                                <option value="manutencao_prev">Manutenção Preventiva</option>
+                                <option value="manutencao_corr">Manutenção Corretiva</option>
+                                <option value="calibracao">Calibração de Equipamentos</option>
+                                <option value="ambos">Manutenção + Calibração</option>
+                                <option value="outro">Outro assunto</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="mensagem" class="block text-sm font-medium text-gray-700 mb-2">Mensagem (Detalhe os equipamentos)</label>
+                            <textarea id="mensagem" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-pedblue focus:border-pedblue outline-none transition-all resize-none" placeholder="Descreva sua necessidade..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-pedgreen hover:bg-pedgreen-dark text-white font-bold py-4 rounded-lg transition-colors shadow-lg shadow-pedgreen/20">
+                            Enviar Solicitação
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center">
+                <i class="fa-solid fa-stethoscope text-white text-xl mr-2"></i>
+                <span class="font-bold text-xl tracking-tight text-white">ped<span class="text-pedgreen">med</span></span>
+            </div>
+            <p class="text-sm text-center md:text-left">
+                &copy; <span id="year"></span> Pedmed - Manutenção e Calibração. Todos os direitos reservados.
+            </p>
+            <div class="text-sm">
+                Desenvolvido para salvar vidas.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Update copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
